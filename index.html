@@ -1,1 +1,124 @@
-# portfolio
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>Taro Shuro's Portfolio</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script>
+        window.onload = function () {
+            const clickEvent = () => {
+                const peoples = [
+                    { name: "太郎", age: 15 },
+                    { name: "花子", age: 18 },
+                    { name: "花梨", age: 35 },
+                    { name: "健太", age: 28 }
+                ];
+                for (let i = 0; i < peoples.length; i++) {
+                    const person = peoples[i];
+                    const name = person.name;
+                    const age = person.age;
+                    if (age < 20) {
+                    const yearsTo20 = 20 - age;
+                    console.log(`${name}さんの年齢は${age}歳です。20歳まで${yearsTo20}年です。`);
+                    } else {
+                    console.log(`${name}さんの年齢は${age}歳です。20歳を超えています。`);
+                    }
+                }
+
+                let array = [29342, 45342, 23419283, 148458552];
+                let even = []; // 偶数
+                let odd = []; // 奇数
+                let i = 0;
+                while (i < array.length) {
+                    const number = array[i];
+                    const remainder = number % 7;
+                    let type;
+                    if (number % 2 === 0) {
+                        type = '偶数';
+                    } else {
+                        type = '奇数';
+                    }
+                    console.log(`${number}は${type}です。7で割ったあまりは${remainder}です。`);
+                    if (remainder === 0) {
+                        even.push(number);
+                    } else {
+                        odd.push(number);
+                    }
+                    i++;
+                    }
+                };
+                let button = document.getElementById("button");
+                button.addEventListener("click", clickEvent);
+            };
+        </script>
+    </head>
+    <body>
+        <header class="clearfix">
+            <h1><span>T</span>aro Shuro's Portfolio</h1>
+            <ul>
+                <li><a href="#introduction">自己紹介</a></li>
+                <li><a href="#sample">実装サンプル</a></li>
+            </ul>
+        </header>
+        <main>
+            <div class="main_img"></div>
+            <div class="container">
+                <section id="introduction">
+                    <div class="self-introduction"><h2>自己紹介<span>Self Introduction</span></h2></div>
+                </section>
+                <div class="text">
+                    <p>私の名前は<span class="bold-text">就労太郎</span>です。アメリカ合衆国出身で現在はディーキャリアITエキスパートにて、プログラミング学習に取り組んでおります。<br>どうぞよろしくお願いいたします。</p>
+                </div>
+                <div class="tree">
+                    <img src="images/img01.jpg" alt="木の画像">
+                </div>
+                <div class="introduction_flexbox">
+                <div class="favorites">
+                <div class="favorites-title"><h3>好きなもの・趣味<span>Favorites</span></h3></div>
+                <ul class="favorites1">
+                    <li>スポーツ観戦</li>
+                    <li>読書</li>
+                    <li>アウトドア</li>
+                </ul>
+                </div>
+                <div class="websites">
+                <div class="websites-title"><h3>Webサイト<span>Web Sites</span></h3></div>
+                <ul class="websites1">
+                    <li><a href="https://dd-career.com/" target="_blank">ディーキャリア</a></li>
+                    <li><a href="https://www.google.com/" target="_blank">Google</a></li>
+                    <li><a href="https://www.yahoo.co.jp/" target="_blank">Yahoo! Japan</a></li>
+                </ul>
+                </div>
+                </div>
+                <section id="sample">
+                <div class="sample-title"><h2>実装サンプル<span>Sample</span></h2></div>
+                </section>
+                <div class="gallery-title"><h3>画像ギャラリー</h3></div>
+                <div class="gallery_flexbox">
+                    <div><img src="images/gallery01.jpg" alt="宇宙飛行士と月の画像"><h4>宇宙飛行士と月</h4><p>幻想的な色彩の月と雲の前に、宇宙飛行士が立っています。</p></div>
+                    <div><img src="images/gallery02.jpg" alt="朝日と石の画像"><h4>朝日と石</h4><p>積み重ねられた石を、朝日が照らしています。</p></div>
+                    <div><img src="images/gallery03.jpg" alt="鏡のような湖の画像"><h4>鏡のような湖</h4><p>空と海がどちらかわからなくなるような、鏡のような湖です。</p></div>
+                    <div><img src="images/gallery04.jpg" alt="ハートの風船の画像"><h4>ハートの風船</h4><p>青空をバックに、たくさんの色とりどりのハートの風船が浮いています。</p></div>
+                </div>
+                <div class="contact-form-title"><h3>お問い合わせフォーム</h3></div>
+                <div class="contact-form">
+                    <p><span>必須</span>名前</p>
+                    <input type="text" name="name" autocomplete="name">
+                    <p><span>必須</span>メールアドレス</p>
+                    <input type="text"  name="email" autocomplete="email">
+                    <p><span>必須</span>年齢</p>
+                    <input type="text"  name="age" autocomplete="off">
+                    <p><span>必須</span>問い合わせ内容</p>
+                    <input type="text"  name="inquiry" autocomplete="off">
+                </div>
+                    <input class="btn_submit" type="submit" value="送信">
+                    <div class="js-title"><h3>JavaScript課題</h3></div>
+                    <input class="btn_execution" id="button" type="submit" value="実行！" >
+            </div>
+        </main>
+        <footer>
+            <span>Copyright © 2022 Taro Shuro</span>
+        </footer>
+    </body>
+</html>
